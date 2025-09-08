@@ -2,3 +2,70 @@
 	width: 100%;
 	height: 100%;
 }
+
+/* Dialog animations */
+@keyframes dialog-overlay-show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes dialog-overlay-hide {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes dialog-content-show {
+	from {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@keyframes dialog-content-hide {
+	from {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+	to {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.95);
+	}
+}
+
+.dialog-overlay-show {
+	animation: dialog-overlay-show 150ms ease-out;
+}
+
+.dialog-overlay-hide {
+	animation: dialog-overlay-hide 150ms ease-in;
+}
+
+.dialog-content-show {
+	animation: dialog-content-show 200ms ease-out;
+}
+
+.dialog-content-hide {
+	animation: dialog-content-hide 200ms ease-in;
+}
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+	scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;  /* Safari and Chrome */
+}
